@@ -3,14 +3,22 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/database");
 const cookieParser = require("cookie-parser");
 const authRouter = require("./routes/authRoutes");
-
+const cors = require("cors");
+const userRouter = require("./routes/userRoute");
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
 const port = process.env.PORT;
 
