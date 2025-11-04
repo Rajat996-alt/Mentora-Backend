@@ -6,6 +6,7 @@ const {
   sendOTP,
   verifyOtp,
   resetPassword,
+  googleAuth,
 } = require("../controllers/authContoller");
 
 const authRouter = express.Router();
@@ -16,5 +17,6 @@ authRouter.get("/logout", logOut);
 authRouter.post("/sendotp", sendOTP);
 authRouter.post("/verifyotp", verifyOtp);
 authRouter.post("/resetpassword", resetPassword);
+authRouter.post("/googleauth", googleAuth);
 
 module.exports = authRouter;
