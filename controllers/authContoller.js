@@ -3,6 +3,7 @@ const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const genToken = require("../config/token");
 const sendMail = require("../config/sendMail");
+require("dotenv").config();
 
 const signUp = async (req, res) => {
   try {
@@ -158,7 +159,7 @@ const googleAuth = async (req, res) => {
         role,
       });
     }
-    let token = await genToken(user._id);
+    let token = genToken(user._id);
     res.cookie("token", token, {
       httpOnly: true,
       secure: false,
@@ -174,6 +175,7 @@ const googleAuth = async (req, res) => {
   }
 };
 
+
 module.exports = {
   signUp,
   logIn,
@@ -183,3 +185,5 @@ module.exports = {
   resetPassword,
   googleAuth,
 };
+
+
