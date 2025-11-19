@@ -41,7 +41,9 @@ const createCourse = async (req, res) => {
 
 const getPublishedCourses = async (req, res) => {
   try {
-    const courses = await Course.find({ isPublished: true });
+    const courses = await Course.find({ isPublished: true }).populate(
+      "lectures"
+    );
 
     if (courses.length === 0) {
       return res.status(404).json({
