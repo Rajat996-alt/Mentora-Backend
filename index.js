@@ -7,6 +7,7 @@ const cors = require("cors");
 const userRouter = require("./routes/userRoute");
 const courseRouter = require("./routes/courseRoute");
 const lectureRouter = require("./routes/lectureRoute");
+const paymentRouter = require("./routes/paymentRoute");
 dotenv.config();
 
 const app = express();
@@ -23,6 +24,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/course", courseRouter);
 app.use("/api/lecture", lectureRouter);
+app.use("/api/payment", paymentRouter);
 
 const port = process.env.PORT;
 

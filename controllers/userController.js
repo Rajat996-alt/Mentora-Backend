@@ -3,7 +3,9 @@ const User = require("../models/User");
 
 const getCurrentUser = async (req, res) => {
   try {
-    let user = await User.findById(req.userId).select("-password");
+    let user = await User.findById(req.userId)
+      .select("-password")
+      .populate("enrolledCourses");
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
