@@ -42,7 +42,7 @@ const createCourse = async (req, res) => {
 const getPublishedCourses = async (req, res) => {
   try {
     const courses = await Course.find({ isPublished: true }).populate(
-      "lectures"
+      "lectures reviews"
     );
 
     if (courses.length === 0) {
