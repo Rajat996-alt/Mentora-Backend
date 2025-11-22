@@ -30,7 +30,4 @@ const reviewSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Prevent duplicate reviews
-reviewSchema.index({ course: 1, user: 1 }, { unique: true });
-
 module.exports = mongoose.model("Review", reviewSchema);
