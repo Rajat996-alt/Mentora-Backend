@@ -55,7 +55,7 @@ const createReview = async (req, res) => {
 const getReviews = async (req, res) => {
   try {
     const reviews = await Review.find({})
-      .populate("user", "name photoUrl role")
+      .populate("user", "name photoUrl description")
       .populate("course", "thumbnail")
       .sort({ reviewedAt: -1 })
       .lean();
