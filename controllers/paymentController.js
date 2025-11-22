@@ -49,7 +49,7 @@ const verifyPayment = async (req, res) => {
     const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id);
 
     const courseId = orderInfo.receipt;
-    const userId = req.user.id;
+    const userId = req.userId;
 
     const user = await User.findById(userId);
     const course = await Course.findById(courseId);
