@@ -26,9 +26,22 @@ Get all lectures of a course
 Edit lecture (title, preview, video)
 Remove lecture
 
+💳 Payment Integration:-
+Razorpay Payments Integration
+Order Initialization & Receipt Generation
+Secure Payment Verification
+Full Course Purchase Flow
+
 🗄️ Tech Stack:-
 Node.js, Express.js
 MongoDB (Mongoose)
 JWT + Cookies
 Multer + Cloudinary
 CORS, bcrypt, dotenv
+Razorpay SDK
+
+🔧 Tools:-
+Postman
+Git & GitHub
+Nodemon
+NPM
