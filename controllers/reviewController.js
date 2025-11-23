@@ -40,6 +40,15 @@ const createReview = async (req, res) => {
       $push: { reviews: review._id },
     });
 
+    // Average rating
+    const allReviews = await Review.find({ course: courseId }).select("rating");
+    const avgRating =
+      allReviews.reduce((acc, r) => acc + r.rating, 0) / allReviews.length;
+
+    await Review.findByIdAndUpdate(courseId, {
+      averageRating: avgRating.toFixed(1),
+    });
+
     return res.status(201).json({
       message: "Review added successfully",
       review,
