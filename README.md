@@ -5,7 +5,7 @@ It includes secure authentication, course creation, lecture uploads, AI-powered 
 (Add link if available)
 
 📂 GitHub Repository
-https://github.com/Rajat996-alt/Mentora-Backend
+https://github.com/Rajat996-alt/Mentora_LMS
 
 
 🛠️ Tech Stack:-
